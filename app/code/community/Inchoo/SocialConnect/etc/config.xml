@@ -78,6 +78,9 @@
             <inchoo_socialconnect>
                 <class>Inchoo_SocialConnect_Helper</class>
             </inchoo_socialconnect>
+            <inchoo_socialconnect_facebook>
+                <class>Inchoo_SocialConnect_Helper_Facebook</class>
+            </inchoo_socialconnect_facebook>
         </helpers>
         <resources>
             <inchoo_socialconnect_setup>

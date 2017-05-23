@@ -72,17 +72,6 @@
         </div>
     </div>
     <?php else: ?>
-    <div class="col2-set">
-        <div class="box-content">
-            <div class="col-1">
-                <p>
-                    <?php echo $this->__('You can connect store account with your Facebook account so you could login easier in the future.') ?>
-                </p>
-            </div>
-            <div class="col-2">
-                <?php echo $this->getChildHtml('inchoo_socialconnect_account_facebook_button'); ?>
-            </div>
-        </div>
-    </div>
+		<?php echo $this->getChildHtml('inchoo_socialconnect_account_facebook_button'); ?>
     <?php endif; ?>
 </div>

@@ -189,5 +189,4 @@ class Inchoo_SocialConnect_Helper_Facebook extends Mage_Core_Helper_Abstract
 
         return $url;
     }
-
 }

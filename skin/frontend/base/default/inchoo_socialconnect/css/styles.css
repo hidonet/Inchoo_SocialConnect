@@ -43,3 +43,20 @@ div.inchoo-socialconnect-account .col2-set .col-1 {
 div.inchoo-socialconnect-account .col2-set .col-2 {
     width: 19%
 }
+
+.toplink_facebook a{
+	color: white !important;
+	background: #3e5d9c;
+	padding: 1px 8px 2px 6px;
+	margin-top: -2px;
+	border-radius: 4px;
+}
+
+.inchoo-socialconnect-login{
+	margin-top:0px !important;
+	margin-bottom:10px !important;
+}
+
+body.customer-account-login > div.wrapper > div > div.main-container{
+	padding: 10px 0 30px !important;
+}

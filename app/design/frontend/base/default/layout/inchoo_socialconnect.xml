@@ -17,7 +17,12 @@
 <layout>
     <default>
         <reference name="head">
-            <action method="addItem"
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>inchoo_socialconnect/css/styles.css</name>
+            </action>
+			
+			<action method="addItem"
                 ifconfig="customer/inchoo_socialconnect_google/enabled">
                 <type>skin_css</type>
                 <name>inchoo_socialconnect/google/css/button.css</name>
@@ -48,7 +53,7 @@
             </action>
         </reference>
         <reference name="content">
-            <block type="inchoo_socialconnect/login" name="inchoo_socialconnect_login">
+            <block type="inchoo_socialconnect/login" name="inchoo_socialconnect_login" before="customer_form_login">
                 <block type="inchoo_socialconnect/google_button" name="inchoo_socialconnect_google_login_button" />
                 <block type="inchoo_socialconnect/facebook_button" name="inchoo_socialconnect_facebook_login_button" />
                 <block type="inchoo_socialconnect/twitter_button" name="inchoo_socialconnect_twitter_login_button" />
@@ -221,4 +226,19 @@
             </block>
         </reference>
     </checkout_onepage_index>
+
+    <default>
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="customer">
+				<label>FaceBook ile Giriş</label>
+				<url helper="inchoo_socialconnect/getFacebookAuthUrl"/>
+				<title>FaceBook ile Üye Olun veya Giriş Yapın</title>
+				<prepare/>
+				<urlParams/>
+				<class>toplink_facebook</class>
+				<param><![CDATA[class="toplink_facebook"]]></param>
+			</action>
+        </reference>
+    </default>
+
 </layout>
