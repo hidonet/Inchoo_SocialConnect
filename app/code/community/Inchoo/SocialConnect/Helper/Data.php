@@ -24,9 +24,24 @@ class Inchoo_SocialConnect_Helper_Data extends Mage_Core_Helper_Abstract
 	function getFacebookAuthUrl() {
 	
 		//$client = Mage::getSingleton('Inchoo_SocialConnect_Model_Facebook_Oauth2_Client');
-		$client = Mage::getSingleton('Inchoo_SocialConnect_Model_Facebook_Client');
 
-		return $client->createAuthUrl();
+		//$this->client = Mage::getSingleton('Inchoo_SocialConnect_Model_Facebook_Client');
+
+        $this->client = Mage::getSingleton('inchoo_socialconnect/facebook_oauth2_client');
+        if(!($this->client->isEnabled())) {
+            return;
+        }
+
+        $this->userInfo = Mage::registry('inchoo_socialconnect_facebook_userinfo');
+
+        // CSRF protection
+        Mage::getSingleton('core/session')->setFacebookCsrf($csrf = md5(uniqid(rand(), true)));
+        $this->client->setState($csrf);
+
+        Mage::getSingleton('customer/session')->setSocialConnectRedirect(Mage::helper('core/url')->getCurrentUrl());
+		$auth_url = $this->client->createAuthUrl();
+
+		return $auth_url;
 
 	} // function sonu -----------------------------------------------------------------------------------
 

@@ -227,7 +227,7 @@
         </reference>
     </checkout_onepage_index>
 
-    <default>
+    <customer_logged_out>
         <reference name="top.links">
             <action method="addLink" translate="label title" module="customer">
 				<label>FaceBook ile Giriş</label>
@@ -235,10 +235,10 @@
 				<title>FaceBook ile Üye Olun veya Giriş Yapın</title>
 				<prepare/>
 				<urlParams/>
-				<class>toplink_facebook</class>
-				<param><![CDATA[class="toplink_facebook"]]></param>
+				<position>100</position>
+				<param><![CDATA[id="toplink_facebook"]]></param>
 			</action>
         </reference>
-    </default>
+    </customer_logged_out>
 
 </layout>
